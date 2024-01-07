@@ -1,0 +1,85 @@
+# fly.toml app configuration file generated for fly-nodejs-ftp-server on 2024-01-07T12:35:14+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "fly-nodejs-ftp-server"
+primary_region = "waw"
+
+[experimental]
+  auto_rollback = true
+
+[build]
+
+[env]
+  ADDRESS = "213.188.xxx.xxx"
+  MAX_PORT = "21005"
+  MIN_PORT = "21000"
+  PORT = "21"
+  TINI_SUBREAPER = "true"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_start_machines = true
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 21
+
+  [[services.ports]]
+    port = 21
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 21000
+
+  [[services.ports]]
+    port = 21000
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 21001
+
+  [[services.ports]]
+    port = 21001
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 21002
+
+  [[services.ports]]
+    port = 21002
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 21003
+
+  [[services.ports]]
+    port = 21003
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 21004
+
+  [[services.ports]]
+    port = 21004
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 21005
+
+  [[services.ports]]
+    port = 21005
+
+[checks]
+  [checks.alive]
+    type = "tcp"
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "5s"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256

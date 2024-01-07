@@ -1,0 +1,43 @@
+{
+  "name": "fly-nodejs-ftp-server",
+  "version": "1.0.0",
+  "description": "A simple FTP server on node JS for Fly.io",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "deploy": "flyctl deploy --ha=false",
+    "status": "flyctl status",
+    "machines": "flyctl machine list",
+    "logs": "flyctl logs",
+    "ssh:console": "flyctl ssh console",
+    "show:envs": "flyctl config env",
+    "login": "flyctl auth login",
+    "logout": "flyctl auth logout",
+    "auth:whoami": "flyctl auth whoami",
+    "launch": "flyctl launch --ha=false",
+    "install-modules": "npm i",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rybonka/fly-nodejs-ftp-server.git"
+  },
+  "keywords": [
+    "ftp",
+    "server",
+    "fly",
+    "ftp"
+  ],
+  "author": "Alex Rybonka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rybonka/fly-nodejs-ftp-server/issues"
+  },
+  "homepage": "https://github.com/rybonka/fly-nodejs-ftp-server#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ftp-srv": "^4.6.3",
+    "path": "^0.12.7",
+    "uuid": "^9.0.1"
+  }
+}
