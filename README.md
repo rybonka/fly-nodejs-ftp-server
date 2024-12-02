@@ -46,7 +46,7 @@ A simple FTP server on node JS for [Fly.io](https://fly.io) (based on [ftp-srv](
 1. Edit the `pasv_url` in the `server.js`. Run `fly info` command to get _your_ app's IPv4 address, and replace `213.188.xxx.xxx` with _your_ app's IPv4 address:
 
     ```javascript
-    pasv_url: "ftp://213.188.xxx.xxx"
+    pasv_url: "213.188.xxx.xxx"
     ```
 2. Edit the `username` and `password` in the `server.js` with desired login credentials to your FTP folder.
 
